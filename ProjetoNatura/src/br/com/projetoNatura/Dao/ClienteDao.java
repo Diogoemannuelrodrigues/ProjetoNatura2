@@ -80,11 +80,6 @@ public class ClienteDao {
 		
 	}
 	
-//	
-//	
-//	
-//	
-//	
 	public List<Cliente> clientes() throws ClassNotFoundException, SQLException  {
 		List<Cliente> listaCliente = new ArrayList<Cliente>();
 		String sql = "select * from cliente order by id";

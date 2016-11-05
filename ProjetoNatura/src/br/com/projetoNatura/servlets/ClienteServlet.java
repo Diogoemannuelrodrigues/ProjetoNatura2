@@ -41,7 +41,7 @@ public class ClienteServlet extends HttpServlet {
 //teste final
 			req.getRequestDispatcher("resultado/ClienteCadastrado.jsp").forward(req, resp);
 
-		}else if(acao !=null && acao.equals("consultarTodos")){
+		}else if(acao.equals("consultarTodos")){
 			try{
 				List<Cliente> clientes = clienteBo.consultarTodos();
 				req.setAttribute("clientes", clientes);
@@ -49,7 +49,7 @@ public class ClienteServlet extends HttpServlet {
 			}catch (ClassNotFoundException | SQLException e){
 				e.printStackTrace();
 			}	
-		}else if (acao !=null && acao.equals("alterarCliente")) {
+		}else if (acao.equals("alterarCliente")) {
 			cliente.setId(Integer.parseInt(req.getParameter("Id")));
 			cliente.setNome(req.getParameter("nome"));
 			cliente.setTelefone(req.getParameter("telefone"));
@@ -60,11 +60,11 @@ public class ClienteServlet extends HttpServlet {
 			clienteBo.alterarCliente(cliente);
 			resp.sendRedirect("../ProjetoNatura/resultado/alterado.jsp");
 			
-		}else if(acao != null && acao.equals("excluir")){
+		}else if(acao.equals("excluir")){
 			cliente.setId(Integer.parseInt(req.getParameter("id")));
 			clienteBo.excluirCliente(cliente);
 			req.getRequestDispatcher("../../ProjetoNatura/Cliente?acao=consultarTodos").forward(req, resp);
-		}else if(acao != null && acao.equals("consultarPorId")){
+		}else if(acao.equals("consultarPorId")){
 			cliente=clienteBo.consultarPorId(Integer.parseInt(req.getParameter("id")));
 			req.setAttribute("cliente", cliente);
 			
