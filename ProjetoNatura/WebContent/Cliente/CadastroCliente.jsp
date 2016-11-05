@@ -20,12 +20,13 @@
 		CPF.:          <input type="text" name="cpf"></br>
 		E-mail.:          <input type="text" name="email"></br>
 		
+	<input  type="hidden" name="acao" value="cadastrar">
 		             </br><input type="submit" value="cadastrar"><br>
 
-		             <p><input type="button" onclick="location='../../ProjetoNatura/Cliente?acao=consultarTodos'" value="Listar"><br>
+<p><input type="button" onclick="location='../../ProjetoNatura/Cliente?acao=consultarTodos'" value="Listar"><br>
 
 		             
-		             <p><input type="button" onclick="location='../../ProjetoNatura/Menu.jsp'" value="Menu Principal"><br>
+<p><input type="button" onclick="location='../../ProjetoNatura/Menu.jsp'" value="Menu Principal"><br>
 
 
 </fieldset>
