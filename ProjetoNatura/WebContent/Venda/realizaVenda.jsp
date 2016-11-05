@@ -34,8 +34,6 @@
 						</option>
 					<% }%> 
 				</div>
-				
-				
 				<input type="submit" value="vender"><br>
 				<p>
 					<input type="button"
