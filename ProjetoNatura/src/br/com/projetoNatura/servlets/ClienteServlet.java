@@ -64,6 +64,7 @@ public class ClienteServlet extends HttpServlet {
 			cliente.setId(Integer.parseInt(req.getParameter("id")));
 			clienteBo.excluirCliente(cliente);
 			req.getRequestDispatcher("../../ProjetoNatura/Cliente?acao=consultarTodos").forward(req, resp);
+			
 		}else if(acao.equals("consultarPorId")){
 			cliente=clienteBo.consultarPorId(Integer.parseInt(req.getParameter("id")));
 			req.setAttribute("cliente", cliente);

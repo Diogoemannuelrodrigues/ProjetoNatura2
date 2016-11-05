@@ -11,7 +11,7 @@
 <% Cliente cliente;%>
 <% cliente = (Cliente) request.getAttribute("cliente"); %>
 
-<form  method="post" action="/ProjetoNatura/ClienteServlet">  <!--mandando para o cliete servlet -->
+<form  method="post" action="/ProjetoNatura/ClienteServlet">  
 <div align="center">
 <div><img width="350px" height="250px" src="/../ProjetoNatura/imagens/clientes.jpg"/></div>
 		<input type="hidden" name="acao" value="alterarCliente" />
@@ -32,8 +32,8 @@
 					
 					<input  type="hidden" name="acao" value="alterarCliente">
 					
-<!-- 					<input type="submit" name="alterar" value="AlterarCliente"> -->
-					
+					<input type="submit" name="alterar" value="AlterarCliente"> 
+										
 		             <p><input type="button" onclick="location='../../ProjetoNatura/Menu.jsp'" value="Menu Principal"><br>
 </div>
 
