@@ -11,10 +11,9 @@
 <% Cliente cliente;%>
 <% cliente = (Cliente) request.getAttribute("cliente"); %>
 
-<form  method="post" action="/ProjetoNatura/ClienteServlet">  
+<form  method="post" action="/ProjetoNatura/Cliente">  
 <div align="center">
 <div><img width="350px" height="250px" src="/../ProjetoNatura/imagens/clientes.jpg"/></div>
-		<input type="hidden" name="acao" value="alterarCliente" />
 		<br><br>
              <input  type="hidden"  size ="25" name="Id_cliente" value="<%cliente.getId();%>" />
  
@@ -39,6 +38,6 @@
 
 
 			
-				</form>	
+</form>	
 </body>
 </html>

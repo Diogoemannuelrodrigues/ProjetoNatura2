@@ -38,7 +38,6 @@ public class ClienteServlet extends HttpServlet {
 			cliente.setCpf(req.getParameter("cpf"));
 			cliente.setEmail(req.getParameter("email"));
 			clienteBo.cadastar(cliente);
-//teste final
 			req.getRequestDispatcher("resultado/ClienteCadastrado.jsp").forward(req, resp);
 
 		}else if(acao.equals("consultarTodos")){
@@ -49,6 +48,7 @@ public class ClienteServlet extends HttpServlet {
 			}catch (ClassNotFoundException | SQLException e){
 				e.printStackTrace();
 			}	
+	
 		}else if (acao.equals("alterarCliente")) {
 			cliente.setId(Integer.parseInt(req.getParameter("Id")));
 			cliente.setNome(req.getParameter("nome"));
@@ -56,7 +56,6 @@ public class ClienteServlet extends HttpServlet {
 			cliente.setEndereco(req.getParameter("endereco"));
 			cliente.setCpf(req.getParameter("cpf"));
 			cliente.setEmail(req.getParameter("email"));
-
 			clienteBo.alterarCliente(cliente);
 			resp.sendRedirect("../ProjetoNatura/resultado/alterado.jsp");
 			

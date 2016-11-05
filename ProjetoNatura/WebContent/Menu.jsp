@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Menu</title>
 </head>
-<body BACKGROUND="C:\Users\Diogo\ProjetoNatura\WebContent\imagens\logoNatura.jpg" bgcolor="#D3D3D3">
+<!-- <body BACKGROUND="C:\Users\Diogo\ProjetoNatura\WebContent\imagens\NATURALOGOVERDE.jpg" bgcolor="#D3D3D3"> -->
 <body>
 <div align="center">
 <table bgcolor="yellow" width="100%">
