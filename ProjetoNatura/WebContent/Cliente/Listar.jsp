@@ -10,7 +10,7 @@
 </head>
 <body>
 <form>
-<div align="CENTER">
+<div align="center">
 <% List<Cliente> clientes = (List<Cliente>)request.getAttribute("clientes");%>
 <h1>Listar Clientes</h1> 
 

@@ -23,8 +23,6 @@ public class ClienteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doPost(req, resp);
 	}
-//Teste para dar um novo comit
-	//vamos fazer teste
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String acao = req.getParameter("acao");
@@ -69,6 +67,7 @@ public class ClienteServlet extends HttpServlet {
 			req.setAttribute("cliente", cliente);
 			
 			req.getRequestDispatcher("../Cliente/alterarCliente.jsp").forward(req, resp);
+			
 		}else {
 			System.out.println("in here");
 		}
