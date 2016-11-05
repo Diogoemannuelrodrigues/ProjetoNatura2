@@ -18,12 +18,12 @@
 <table border="1">
 		<tr>
 		<div align="center">
-			<td>Id.:</td>
-			<a><td>Nome-Cliente.:</td></a>
+			<td>Id:</td>
+			<a><td>Nome cliente:</td></a>
 			<a><td>Telefone:</td></a>
-			<td>Endereco.:</td>
-			<td>Cpf.:</td>
-			<td>E-mail.:</td>
+			<td>Endereco:</td>
+			<td>Cpf:</td>
+			<td>E-mail:</td>
 			<td></td>
 		</tr>
 		
@@ -37,7 +37,7 @@
 			out.print("<td>"+cliente.getCpf()+"</td>");
 			out.print("<td>"+cliente.getEmail()+"</td>");
 			out.print("<td><a href='../ProjetoNatura/Cliente?acao=consultarPorId&id="+cliente.getId()+"'>Alterar</a></td>"); 
-			out.print("<td><a href='ProjetoNatura/Cliente?acao=excluir&id="+cliente.getId()+"'>Excluir</a></td>");
+			out.print("<td><a href='../ProjetoNatura/Cliente?acao=excluir&id="+cliente.getId()+"'>Excluir</a></td>");
 			out.print("</tr>");
 			
 		}

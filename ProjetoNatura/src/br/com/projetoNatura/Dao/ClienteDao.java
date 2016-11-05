@@ -116,7 +116,7 @@ public class ClienteDao {
 		try{ 
 			Connection con = Conexao.getConnection();
 			PreparedStatement stm = con.prepareStatement(sql);
-			stm.setInt(1,cliente.getId());
+			stm.setInt(1, cliente.getId());
 			stm.execute();
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException  | SQLException e) {
 			e.printStackTrace();

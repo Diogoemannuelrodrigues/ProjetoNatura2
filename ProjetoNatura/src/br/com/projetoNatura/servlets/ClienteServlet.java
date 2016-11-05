@@ -61,8 +61,9 @@ public class ClienteServlet extends HttpServlet {
 			resp.sendRedirect("../ProjetoNatura/resultado/alterado.jsp");
 			
 		}else if(acao != null && acao.equals("excluir")){
-//			cliente.setId(req.getParameter("id");
+			cliente.setId(Integer.parseInt(req.getParameter("id")));
 			clienteBo.excluirCliente(cliente);
+			req.getRequestDispatcher("../../ProjetoNatura/Cliente?acao=consultarTodos").forward(req, resp);
 		}else if(acao != null && acao.equals("consultarPorId")){
 			cliente=clienteBo.consultarPorId(Integer.parseInt(req.getParameter("id")));
 			req.setAttribute("cliente", cliente);
