@@ -35,34 +35,30 @@ public class ClienteDao {
 		}
 		
 	
-//	public Cliente consultarPorId (int id) throws SQLException, ClassNotFoundException{
-//		Connection con = Conexao.getConexao();
-//		Cliente cliente = null;
-//		
-//		try{
-//			PreparedStatement stm = con.prepareStatement("select * from cliente where id = ?");
-//			stm.setInt(1, id);
-//			ResultSet rSet = stm.executeQuery();
-//			while(rSet.next()){
-//				cliente.setId(rSet.getInt("id"));
-//				cliente.setNome(rSet.getString("nome"));
-//				cliente.setTelefone(rSet.getString("telefone"));
-//				cliente.setEndereco(rSet.getString("endereco"));
-//				cliente.setCpf(rSet.getString("cpf"));
-//				cliente.setEmail(rSet.getString("email"));
-//				rSet.close();
-//				stm.close();
-//			}
-//		}catch( SQLException e){
-//			e.printStackTrace();
-//		}finally{
-//			con.close();
-//		}
-//		
-//		return cliente;
-//	}
-//	
-//	
+	public Cliente consultarPorId (int id) {
+		Cliente cliente = null;
+		try{
+			Connection con = Conexao.getConnection();
+			PreparedStatement stm = con.prepareStatement("select * from cliente where id = ?");
+			stm.setInt(1, id);
+			ResultSet rSet = stm.executeQuery();
+			while(rSet.next()){
+				cliente.setId(rSet.getInt("id"));
+				cliente.setNome(rSet.getString("nome"));
+				cliente.setTelefone(rSet.getString("telefone"));
+				cliente.setEndereco(rSet.getString("endereco"));
+				cliente.setCpf(rSet.getString("cpf"));
+				cliente.setEmail(rSet.getString("email"));
+				rSet.close();
+				stm.close();
+			}
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}	
+		return cliente;
+	}
+	
+	
 	public static void alterarCliente(Cliente cliente){
 		
 		try {

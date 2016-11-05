@@ -30,9 +30,8 @@ public class ClienteServlet extends HttpServlet {
 		String acao = req.getParameter("acao");
 		Cliente cliente = new Cliente();
 		ClienteBo clienteBo = new ClienteBo();	
-
-		if (acao !=null && acao.equals("cadastrar")) {
-
+	
+		if (acao.equals("cadastrar")) {
 			cliente.setNome(req.getParameter("nome"));
 			cliente.setTelefone(req.getParameter("telefone"));
 			cliente.setEndereco(req.getParameter("endereco"));
@@ -42,7 +41,7 @@ public class ClienteServlet extends HttpServlet {
 //teste final
 			req.getRequestDispatcher("resultado/ClienteCadastrado.jsp").forward(req, resp);
 
-		}else if(acao !=null && acao.equals("consulta rTodos")){
+		}else if(acao !=null && acao.equals("consultarTodos")){
 			try{
 				List<Cliente> clientes = clienteBo.consultarTodos();
 				req.setAttribute("clientes", clientes);
@@ -59,11 +58,18 @@ public class ClienteServlet extends HttpServlet {
 			cliente.setEmail(req.getParameter("email"));
 
 			clienteBo.alterarCliente(cliente);
-			resp.sendRedirect("/ProjetoNatura/ClienteServlet?acao=alterar");
+			resp.sendRedirect("../ProjetoNatura/resultado/alterado.jsp");
 			
 		}else if(acao != null && acao.equals("excluir")){
 //			cliente.setId(req.getParameter("id");
 			clienteBo.excluirCliente(cliente);
+		}else if(acao != null && acao.equals("consultarPorId")){
+			cliente=clienteBo.consultarPorId(Integer.parseInt(req.getParameter("id")));
+			req.setAttribute("cliente", cliente);
+			
+			req.getRequestDispatcher("../Cliente/alterarCliente.jsp").forward(req, resp);
+		}else {
+			System.out.println("in here");
 		}
 	}
 }

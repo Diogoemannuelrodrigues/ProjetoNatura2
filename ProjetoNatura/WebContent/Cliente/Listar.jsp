@@ -20,6 +20,7 @@
 		<div align="center">
 			<td>Id.:</td>
 			<a><td>Nome-Cliente.:</td></a>
+			<a><td>Telefone:</td></a>
 			<td>Endereco.:</td>
 			<td>Cpf.:</td>
 			<td>E-mail.:</td>
@@ -31,10 +32,11 @@
 			out.print("<tr>"); 
 			out.print("<td>"+cliente.getId()+"</td>");
 			out.print("<td>"+cliente.getNome()+"</td>"); 
+			out.print("<td>"+cliente.getTelefone()+"</td>");
 			out.print("<td>"+cliente.getEndereco()+"</td>");
 			out.print("<td>"+cliente.getCpf()+"</td>");
 			out.print("<td>"+cliente.getEmail()+"</td>");
-			out.print("<td><a href='ProjetoNatura/Cliente?acao=consultarTodos="+cliente.getId()+"'>Alterar</a></td>"); 
+			out.print("<td><a href='../ProjetoNatura/Cliente?acao=consultarPorId&id="+cliente.getId()+"'>Alterar</a></td>"); 
 			out.print("<td><a href='ProjetoNatura/Cliente?acao=excluir&id="+cliente.getId()+"'>Excluir</a></td>");
 			out.print("</tr>");
 			
@@ -42,8 +44,8 @@
 		%>
 		</table>
 		
-			<p><input type="button" onclick="location='../../ProjetoNatura/Cliente/CadastroCliente.jsp'" value="Voltar"><br>
-		             <p><input type="button" onclick="location='../../ProjetoNatura/Menu.jsp'" value="Menu Principal"><br>
+<p><input type="button" onclick="location='../../../ProjetoNatura/Cliente/CadastroCliente.jsp'" value="Voltar"><br>
+		   <p><input type="button" onclick="location='../../ProjetoNatura/Menu.jsp'" value="Menu Principal"><br>
 </div align="center">
 
 </form>

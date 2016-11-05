@@ -25,10 +25,10 @@ public class ClienteBo {
 		dao.alterarCliente(cliente);
 	}
 
-//	public Cliente consultarPorId(int id) throws SQLException {
-//		ClienteDao dao = new ClienteDao();	
-//		dao.consultarPorId(id);
-//	}
+	public Cliente consultarPorId(int id){
+		ClienteDao dao = new ClienteDao();	
+		return dao.consultarPorId(id); 
+	}
 	
 	public void excluirCliente(Cliente cliente){
 		ClienteDao dao = new ClienteDao();
