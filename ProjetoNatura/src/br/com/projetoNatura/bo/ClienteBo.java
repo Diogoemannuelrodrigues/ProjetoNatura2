@@ -15,7 +15,7 @@ public class ClienteBo {
 
 	}
 
-	public List<Cliente> consultarTodos() throws ClassNotFoundException, SQLException {
+	public static List<Cliente> consultarTodos() throws ClassNotFoundException, SQLException {
 		ClienteDao dao = new ClienteDao();
 		return dao.clientes();
 	}

@@ -10,7 +10,7 @@ import br.com.projetoNatura.entidade.Produto;
 
 public class ProdutoBo {
 	
-	ProdutoDao produtoDao = new ProdutoDao();
+	static ProdutoDao produtoDao = new ProdutoDao();
 	
 	public void cadastrarProduto(Produto produto) throws ClassNotFoundException, SQLException {
 		produtoDao.cadastrarProduto(produto);
@@ -25,7 +25,7 @@ public class ProdutoBo {
 //		produtoDao.alterarProduto(produto);
 //	}
 //	
-	public List<Produto> produtos () throws ClassNotFoundException, SQLException{
+	public static List<Produto> produtos () throws ClassNotFoundException, SQLException{
 		return produtoDao.produtos();
 	}
 	

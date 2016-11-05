@@ -29,7 +29,7 @@ public class VendaDAO {
 		}
 }
 		
-		public List<Venda> mostrarVendas(){
+		public static List<Venda> mostrarVendas(){
 			List<Venda> vendas = new ArrayList<Venda>();
 			Venda venda = new Venda();
 			Cliente cliente = new Cliente();

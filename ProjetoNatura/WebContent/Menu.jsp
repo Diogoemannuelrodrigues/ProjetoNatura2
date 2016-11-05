@@ -35,8 +35,7 @@
 <font color ="#ff0000">
 <td><a href="Produto/Cadastro.jsp"><input type="button" name="Produto" value="Produto"/></a></td>
 <td><a href="Cliente/CadastroCliente.jsp"><input type="button" name="Cliente" value="Cliente"/></a></td>
-<!-- <td><a href="../ProjetoNatura/Produto?acao=consultarProduto"><input type="button" name="Consultar Produto" value="Consultar Produto"/></a></td> -->
-<td><a href="/Relatio.jsp"><input type="button" name="venda" value="Venda"/></a></td>
+<td><a href="/ProjetoNatura/Venda?acao=listar"><input type="button" name="Venda" value="Venda"/></a></td>
 </font>
 </td>
 </tr>
