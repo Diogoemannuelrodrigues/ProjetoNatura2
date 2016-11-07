@@ -11,27 +11,28 @@
 <% Cliente cliente;%>
 <% cliente = (Cliente) request.getAttribute("cliente"); %>
 
-<form  method="post" action="/ProjetoNatura/Cliente">  
+<form action="/ProjetoNatura/Cliente" method="post">  
+<input type="hidden" name="acao" value="alterarCliente"/>
+<input  type="hidden"  size ="25" name="id" value="<%=cliente.getId()%>" />
 <div align="center">
 <div><img width="350px" height="250px" src="/../ProjetoNatura/imagens/clientes.jpg"/></div>
 		<br><br>
-             <input  type="hidden"  size ="25" name="Id_cliente" value="<%cliente.getId();%>" />
- 
-		    Id:<input  type="text"  size ="25" name="cpf" value="<%cliente.getId();%>"><br>
-					
-           	Nome <input  type="text"  size ="25" name="nome" value="<%cliente.getNome();%>" ><br>
+		
+        
+ 					
+           	Nome <input  type="text"  size ="25" name="nome" value="<%=cliente.getNome()%>" ><br>
 		    
-		    Telefone:<input  type="text"  size ="25" name="cpf" value="<%cliente.getTelefone();%>"><br>
+		    Telefone:<input  type="text"  size ="25" name="telefone" value="<%=cliente.getTelefone()%>"><br>
 
-			Endereço:<input  type="text"  size ="25" name="idade" value="<%cliente.getEndereco();%>" ><br>
+			Endereço:<input  type="text"  size ="25" name="endereco" value="<%=cliente.getEndereco()%>" ><br>
 			
-			Cpf:<input  type="text"  size ="25" name="idade" value="<%cliente.getCpf();%>" ><br>
+			Cpf:<input  type="text"  size ="25" name="cpf" value="<%=cliente.getCpf()%>" ><br>
 			
-			E-mail:<input  type="text"  size ="25" name="idade" value="<%cliente.getEmail();%>" ><br><br>
+			E-mail:<input  type="text"  size ="25" name="email" value="<%=cliente.getEmail()%>" ><br><br>
 					
-					<input  type="hidden" name="acao" value="alterarCliente">
+					<input type="submit" name="alterar" value="Alterar"/> 
 					
-					<input type="submit" name="alterar" value="AlterarCliente"> 
+<!-- 					<input type="button" onclick="location='../../ProjetoNatura/Cliente?acao=consultarTodos'" value=""> -->
 										
 		             <p><input type="button" onclick="location='../../ProjetoNatura/Menu.jsp'" value="Menu Principal"><br>
 </div>

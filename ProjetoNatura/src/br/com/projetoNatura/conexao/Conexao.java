@@ -11,7 +11,6 @@ public class Conexao {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
 		String url = "jdbc:mysql://localhost:3306/natura?user=root&password=9193jeane8330";
 		Connection conexao = DriverManager.getConnection(url);
-		System.out.println("PAssando na classe conexao");
 		return conexao;
 		
 	}

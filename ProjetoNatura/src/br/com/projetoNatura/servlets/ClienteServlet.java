@@ -48,17 +48,19 @@ public class ClienteServlet extends HttpServlet {
 			}	
 	
 		}else if (acao.equals("alterarCliente")) {
-			cliente.setId(Integer.parseInt(req.getParameter("Id")));
+			cliente.setId(Integer.parseInt(req.getParameter("id")));
 			cliente.setNome(req.getParameter("nome"));
 			cliente.setTelefone(req.getParameter("telefone"));
 			cliente.setEndereco(req.getParameter("endereco"));
 			cliente.setCpf(req.getParameter("cpf"));
 			cliente.setEmail(req.getParameter("email"));
+			
 			clienteBo.alterarCliente(cliente);
-			resp.sendRedirect("../ProjetoNatura/resultado/alterado.jsp");
+			resp.sendRedirect("../ProjetoNatura/Cliente?acao=consultarTodos");
 			
 		}else if(acao.equals("excluir")){
 			cliente.setId(Integer.parseInt(req.getParameter("id")));
+			clienteBo.consultarPorId(Integer.parseInt(req.getParameter("id")));
 			clienteBo.excluirCliente(cliente);
 			req.getRequestDispatcher("../../ProjetoNatura/Cliente?acao=consultarTodos").forward(req, resp);
 			
