@@ -63,15 +63,16 @@ public class ClienteDao {
 		try {
 			Connection con = Conexao.getConnection();
 			PreparedStatement stm = con.prepareStatement(
-					"UPDATE cliente set nome = ? , telefone = ?, " + "endereco = ?, cpf = ?, email = ? WHERE id = ?");
+					"UPDATE cliente set nome = ? , endereco = ?, telefone = ?, , cpf = ?, email = ? WHERE id = ?");
 			stm.setString(1, cliente.getNome());
-			stm.setString(2, cliente.getTelefone());
-			stm.setString(3, cliente.getEndereco());
+			stm.setString(2, cliente.getEndereco());
+			stm.setString(3, cliente.getTelefone());
 			stm.setString(4, cliente.getCpf());
 			stm.setString(5, cliente.getEmail());
 			stm.setInt(6, cliente.getId());
 			stm.execute();
 			stm.close();
+			con.close();
 
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
@@ -112,7 +113,6 @@ public class ClienteDao {
 			PreparedStatement stm = con.prepareStatement(sql);
 			stm.setInt(1, cliente.getId());
 			stm.execute();
-			System.out.println("Excluido com sucesso");
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
