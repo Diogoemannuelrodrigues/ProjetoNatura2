@@ -11,7 +11,7 @@
 <% Cliente cliente;%>
 <% cliente = (Cliente) request.getAttribute("cliente"); %>
 
-<form action="/ProjetoNatura/Cliente" method="post">  
+<form action="/ProjetoNatura/cliente?acao=alterarCliente" method="post">  
 <input type="hidden" name="acao" value="alterarCliente"/>
 <input  type="hidden"  size ="25" name="id" value="<%=cliente.getId()%>" />
 <div align="center">

@@ -7,7 +7,7 @@
 <title>Cadastro Clientes</title>
 </head>
 <body>
-<form action="../../ProjetoNatura/Cliente" method="post">
+<form action="../../ProjetoNatura/cliente" method="post">
 <div align="CENTER">
 <h1>Cadastro.:</h1>
 
@@ -23,7 +23,7 @@
 	<input  type="hidden" name="acao" value="cadastrar">
 		             </br><input type="submit" value="cadastrar"><br>
 
-<p><input type="button" onclick="location='../../ProjetoNatura/Cliente?acao=consultarTodos'" value="Listar"><br>
+<p><input type="button" onclick="location='../../ProjetoNatura/cliente?acao=consultarTodos'" value="Listar"><br>
 
 		             
 <p><input type="button" onclick="location='../../ProjetoNatura/Menu.jsp'" value="Menu Principal"><br>

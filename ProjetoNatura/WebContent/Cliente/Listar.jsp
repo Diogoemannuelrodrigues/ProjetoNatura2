@@ -9,7 +9,7 @@
 <title>ListarCliente</title>
 </head>
 <body>
-<form>
+
 <div align="center">
 <% List<Cliente> clientes = (List<Cliente>)request.getAttribute("clientes");%>
 <h1>Listar Clientes</h1> 
@@ -24,30 +24,30 @@
 			<td>Endereco:</td>
 			<td>Cpf:</td>
 			<td>E-mail:</td>
-			<td></td>
+			<td>Action</td>
 		</tr>
 		
 		<%for (Cliente cliente: clientes) {%>
-			<%
-			out.print("<tr>"); 
-			out.print("<td>"+cliente.getId()+"</td>");
-			out.print("<td>"+cliente.getNome()+"</td>"); 
-			out.print("<td>"+cliente.getTelefone()+"</td>");
-			out.print("<td>"+cliente.getEndereco()+"</td>");
-			out.print("<td>"+cliente.getCpf()+"</td>");
-			out.print("<td>"+cliente.getEmail()+"</td>");
-			out.print("<td><a href='../ProjetoNatura/Cliente?acao=consultarPorId&id="+cliente.getId()+"'>Alterar</a></td>"); 
-			out.print("<td><a href='../ProjetoNatura/Cliente?acao=excluir&id="+cliente.getId()+"'>Excluir</a></td>");
-			out.print("</tr>");
-			
+			<tr>
+			<td><%=cliente.getId()%></td>
+			<td><%=cliente.getNome()%></td>
+			<td><%=cliente.getTelefone()%></td>
+			<td><%=cliente.getEndereco()%></td>
+			<td><%=cliente.getCpf()%></td>
+			<td><%=cliente.getEmail()%></td>
+			<td><a href="/ProjetoNatura/cliente?acao=consultarPorId&id=<%= cliente.getId()%>">Alterar</a>
+			<a href="/ProjetoNatura/cliente?acao=excluir&id=<%= cliente.getId()%>">Excluir</a></td>
+			</tr>
+		<% 		
 		}
 		%>
+
 		</table>
 		
 <p><input type="button" onclick="location='../../../ProjetoNatura/Cliente/CadastroCliente.jsp'" value="Voltar"><br>
 		   <p><input type="button" onclick="location='../../ProjetoNatura/Menu.jsp'" value="Menu Principal"><br>
 </div align="center">
 
-</form>
+
 </body>
 </html>

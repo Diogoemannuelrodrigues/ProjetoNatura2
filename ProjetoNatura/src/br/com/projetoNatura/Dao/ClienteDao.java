@@ -36,13 +36,15 @@ public class ClienteDao {
 	}
 
 	public Cliente consultarPorId(int id) {
-		Cliente cliente = null;
+		
+		Cliente cliente = new Cliente();
 		try {
 			Connection con = Conexao.getConnection();
 			PreparedStatement stm = con.prepareStatement("select * from cliente where id = ?");
 			stm.setInt(1, id);
 			ResultSet rSet = stm.executeQuery();
 			while (rSet.next()) {
+				
 				cliente.setId(rSet.getInt("id"));
 				cliente.setNome(rSet.getString("nome"));
 				cliente.setTelefone(rSet.getString("telefone"));
@@ -63,14 +65,14 @@ public class ClienteDao {
 		try {
 			Connection con = Conexao.getConnection();
 			PreparedStatement stm = con.prepareStatement(
-					"UPDATE cliente set nome = ? , endereco = ?, telefone = ?, , cpf = ?, email = ? WHERE id = ?");
+					"UPDATE cliente set nome = ? , endereco = ?, telefone = ?, cpf = ?, email = ? WHERE id = ?");
 			stm.setString(1, cliente.getNome());
 			stm.setString(2, cliente.getEndereco());
 			stm.setString(3, cliente.getTelefone());
 			stm.setString(4, cliente.getCpf());
 			stm.setString(5, cliente.getEmail());
 			stm.setInt(6, cliente.getId());
-			stm.execute();
+			stm.executeUpdate();
 			stm.close();
 			con.close();
 

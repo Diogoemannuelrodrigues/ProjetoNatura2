@@ -18,17 +18,33 @@ import br.com.projetoNatura.entidade.Produto;
 public class ClienteServlet extends HttpServlet {
 
 	ClienteBo clienteBo = new ClienteBo();
-	
+
+	Cliente cliente = new Cliente();
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doPost(req, resp);
+
+		String acao = req.getParameter("acao");
+
+		if (acao.equals("excluir")) {
+			cliente.setId(Integer.parseInt(req.getParameter("id")));
+			clienteBo.excluirCliente(cliente);
+			resp.sendRedirect("/ProjetoNatura/cliente?acao=consultarTodos");
+
+		} else if (acao.equals("consultarPorId")) {
+			cliente = clienteBo.consultarPorId(Integer.parseInt(req.getParameter("id")));
+			req.setAttribute("cliente", cliente);
+
+			req.getRequestDispatcher("/Cliente/alterarCliente.jsp").forward(req, resp);
+		}
 	}
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		String acao = req.getParameter("acao");
-		Cliente cliente = new Cliente();
-		ClienteBo clienteBo = new ClienteBo();	
-	
+
 		if (acao.equals("cadastrar")) {
 			cliente.setNome(req.getParameter("nome"));
 			cliente.setTelefone(req.getParameter("telefone"));
@@ -38,39 +54,27 @@ public class ClienteServlet extends HttpServlet {
 			clienteBo.cadastar(cliente);
 			req.getRequestDispatcher("resultado/ClienteCadastrado.jsp").forward(req, resp);
 
-		}else if(acao.equals("consultarTodos")){
-			try{
+		} else if (acao.equals("consultarTodos")) {
+			try {
 				List<Cliente> clientes = clienteBo.consultarTodos();
 				req.setAttribute("clientes", clientes);
 				req.getRequestDispatcher("Cliente/Listar.jsp").forward(req, resp);
-			}catch (ClassNotFoundException | SQLException e){
+			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
-			}	
-	
-		}else if (acao.equals("alterarCliente")) {
+			}
+
+		} else if (acao.equals("alterarCliente")) {
 			cliente.setId(Integer.parseInt(req.getParameter("id")));
 			cliente.setNome(req.getParameter("nome"));
 			cliente.setTelefone(req.getParameter("telefone"));
 			cliente.setEndereco(req.getParameter("endereco"));
 			cliente.setCpf(req.getParameter("cpf"));
 			cliente.setEmail(req.getParameter("email"));
-			
+
 			clienteBo.alterarCliente(cliente);
-			resp.sendRedirect("../ProjetoNatura/Cliente?acao=consultarTodos");
-			
-		}else if(acao.equals("excluir")){
-			cliente.setId(Integer.parseInt(req.getParameter("id")));
-			clienteBo.consultarPorId(Integer.parseInt(req.getParameter("id")));
-			clienteBo.excluirCliente(cliente);
-			req.getRequestDispatcher("../../ProjetoNatura/Cliente?acao=consultarTodos").forward(req, resp);
-			
-		}else if(acao.equals("consultarPorId")){
-			cliente=clienteBo.consultarPorId(Integer.parseInt(req.getParameter("id")));
-			req.setAttribute("cliente", cliente);
-			
-			req.getRequestDispatcher("../Cliente/alterarCliente.jsp").forward(req, resp);
-			
-		}else {
+			resp.sendRedirect("../ProjetoNatura/cliente?acao=consultarTodos");
+
+		} else {
 			System.out.println("in here");
 		}
 	}

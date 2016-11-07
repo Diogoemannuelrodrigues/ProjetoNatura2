@@ -14,17 +14,17 @@
 
 	<servlet-mapping>
 		<servlet-name>Venda</servlet-name>
-		<url-pattern>/Venda</url-pattern>	
-		</servlet-mapping>
+		<url-pattern>/Venda</url-pattern>
+	</servlet-mapping>
 
-<servlet>
+	<servlet>
 		<servlet-name>Cliente</servlet-name>
 		<servlet-class>br.com.projetoNatura.servlets.ClienteServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Cliente</servlet-name>
-		<url-pattern>/Cliente</url-pattern>
+		<url-pattern>/cliente</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -36,10 +36,10 @@
 		<servlet-name>Produto</servlet-name>
 		<url-pattern>/Produto</url-pattern>
 	</servlet-mapping>
-	
-	
-		
-		
+
+
+
+
 
 
 
