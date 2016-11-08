@@ -10,26 +10,29 @@ import br.com.projetoNatura.entidade.Produto;
 
 public class ProdutoBo {
 	
-	static ProdutoDao produtoDao = new ProdutoDao();
+	ProdutoDao dao = new ProdutoDao();
 	
 	public void cadastrarProduto(Produto produto) throws ClassNotFoundException, SQLException {
-		produtoDao.cadastrarProduto(produto);
+		dao.cadastrarProduto(produto);
 	}
 
-//	public Produto consultarProduto(int codigoProduto) {
-//		return produtoDao.consultarProduto(codigoProduto);
-//
-//	}
-//	
-//	public void alterarProduto( Produto produto) throws ClassNotFoundException, SQLException{
-//		produtoDao.alterarProduto(produto);
-//	}
-//	
-	public static List<Produto> produtos () throws ClassNotFoundException, SQLException{
-		return produtoDao.produtos();
+	public Produto consultarProduto(int codigoProduto) {
+		return dao.buscarProdutoPorId(codigoProduto);
+
 	}
 	
-//	public void excluir
+	public void alterarProduto( Produto produto) {
+		dao.alterarProduto(produto);
+	}
+	
+	public static List<Produto> produtos () throws ClassNotFoundException, SQLException{
+		ProdutoDao dao = new ProdutoDao();
+		return dao.produtos();
+	}
+	
+	public void excluir(){
+		
+	}
 	
 	
 

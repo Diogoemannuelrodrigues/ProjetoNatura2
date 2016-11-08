@@ -25,7 +25,7 @@ public class ProdutoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-		String acao = req.getParameter("acao");
+			String acao = req.getParameter("acao");
 			Produto produto = new Produto();
 			ProdutoBo produtoBo = new ProdutoBo();
 		
@@ -52,29 +52,24 @@ public class ProdutoServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		
-//		}else if(acao.equals("consultarProduto")){
-//			
-//			//produto = produtoBo.consultarProduto(Integer.parseInt(req.getParameter("codigoProduto")));
-//			req.setAttribute("Produto", produto);
-//			req.getRequestDispatcher("Produto/Alterar.jsp").forward(req, resp);
-//			
-//		}else if(acao.equals("alterarProduto")){
-//			produto.setNome(req.getParameter("nome"));
-//			produto.setDescricao(req.getParameter("descricao"));
-//			produto.setCodigoProduto(Integer.parseInt(req.getParameter("codigoProduto")));
-//			produto.setPreco(Double.parseDouble(req.getParameter("preco")));
-//			
-//			try {
-//				produtoBo.alterarProduto(produto);
-//			} catch (ClassNotFoundException | SQLException e) {
-////Comentario
-//				e.printStackTrace();
-//			}
-//			System.out.println("Produto cadastrado com sucesso.");
-//			req.getRequestDispatcher("/resultado/produtoAlterado.jsp").forward(req, resp);
-//			req.setAttribute("produto", produto);
-//		
-//		
+		}else if(acao.equals("consultarProduto")){
+			
+			//produto = produtoBo.consultarProduto(Integer.parseInt(req.getParameter("codigoProduto")));
+			req.setAttribute("Produto", produto);
+			req.getRequestDispatcher("Produto/Alterar.jsp").forward(req, resp);
+			
+		}else if(acao.equals("alterarProduto")){
+			produto.setNome(req.getParameter("nome"));
+			produto.setDescricao(req.getParameter("descricao"));
+			produto.setCodigoProduto(Integer.parseInt(req.getParameter("codigoProduto")));
+			produto.setPreco(Double.parseDouble(req.getParameter("preco")));
+			
+			produtoBo.alterarProduto(produto);
+			System.out.println("Produto cadastrado com sucesso.");
+			req.getRequestDispatcher("/resultado/produtoAlterado.jsp").forward(req, resp);
+			req.setAttribute("produto", produto);
+		
+		
 		}else if(acao.equals("excluir")){
 			
 			
