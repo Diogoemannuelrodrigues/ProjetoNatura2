@@ -36,11 +36,10 @@ public class ProdutoDao {
 
 	}
 
-	public Produto buscarProdutoPorId(int id) throws ClassNotFoundException, SQLException {
-		// Produto produto = null;
-		// Connection con = Conexao.getConexao();
+	public Produto buscarProdutoPorId(int id) {
 		String sql = "select * from produto where id = ?";
 		try {
+			Connection con = Conexao.getConnection();
 			PreparedStatement stm = con.prepareStatement(sql);
 			stm.setInt(1, id);
 			ResultSet set = stm.executeQuery();
@@ -50,36 +49,33 @@ public class ProdutoDao {
 				produto.setNome(set.getString("nome"));
 				produto.setDescricao(set.getString("descricao"));
 				produto.setPreco(set.getDouble(("preco")));
-
 			}
-			System.out.println("Encontrado");
-
 			set.close();
 			stm.close();
-		} catch (SQLException e) {
+		} catch (InstantiationException | IllegalAccessException |ClassNotFoundException | SQLException e) {
 			throw new RuntimeErrorException(null, "Nao foi encontrado produto com esse id");
 		}
 		return null;
 	}
 
-	// public static void alterarProduto(Produto produto) throws
-	// ClassNotFoundException, SQLException {
-	// //Connection con = Conexao.getConexao();
-	// try {
-	// PreparedStatement stm = con.prepareStatement("UPDATE produto set nome =
-	// ?, descricao = ?, preco = ? where codigoProduto = ?");
-	// stm.setString(1, produto.getNome());
-	// stm.setString(2, produto.getDescricao());
-	// stm.setDouble(4, produto.getPreco());
-	// stm.setInt(4, produto.getCodigoProduto());
-	//
-	// stm.execute();
-	// System.out.println("Alterado com sucesso:.");
-	// } catch (SQLException e) {
-	// e.printStackTrace();
-	// }
-	//
-	// }
+	public static void alterarProduto(Produto produto) {
+		try {
+			Connection con = Conexao.getConnection();
+			PreparedStatement stm = con
+					.prepareStatement("UPDATE produto set nome = ?, descricao = ?,"
+							+ " preco = ? where codigoProduto = ?");
+			stm.setString(1, produto.getNome());
+			stm.setString(2, produto.getDescricao());
+			stm.setDouble(4, produto.getPreco());
+			stm.setInt(4, produto.getCodigoProduto());
+
+			stm.executeUpdate();
+			System.out.println("Alterado com sucesso:.");
+		} catch (ClassNotFoundException | SQLException |InstantiationException | IllegalAccessException e) {
+			e.printStackTrace();
+		}
+
+	}
 
 	public void excluirProduto(Produto produto) {
 		String sql = "delete from produto where id=?";
@@ -96,24 +92,24 @@ public class ProdutoDao {
 
 	public List<Produto> produtos() {
 		List<Produto> lista = new ArrayList<Produto>();
-		String sql = "select * from produto order by codigoProduto";		
-			try {
-				con = Conexao.getConnection();
-				PreparedStatement stm = con.prepareStatement(sql);
-				ResultSet result = stm.executeQuery();
-				while (result.next()) {
-					Produto produto = new Produto();
-					produto.setNome(result.getString("nome"));
-					produto.setCodigoProduto(result.getInt("codigoProduto"));
-					produto.setDescricao(result.getString("descricao"));
-					produto.setPreco(result.getDouble("preco"));
-					lista.add(produto);
-				}
-				result.close();
-				con.close();
-			} catch (InstantiationException | IllegalAccessException | ClassNotFoundException  | SQLException e) {
-				e.printStackTrace();
+		String sql = "select * from produto order by codigoProduto";
+		try {
+			con = Conexao.getConnection();
+			PreparedStatement stm = con.prepareStatement(sql);
+			ResultSet result = stm.executeQuery();
+			while (result.next()) {
+				Produto produto = new Produto();
+				produto.setNome(result.getString("nome"));
+				produto.setCodigoProduto(result.getInt("codigoProduto"));
+				produto.setDescricao(result.getString("descricao"));
+				produto.setPreco(result.getDouble("preco"));
+				lista.add(produto);
 			}
+			result.close();
+			con.close();
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 
 		return lista;
 	}
