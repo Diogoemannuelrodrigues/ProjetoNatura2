@@ -32,8 +32,8 @@
 	out.print("<td>"+produto.getNome()+"</td>"); 
 	out.print("<td>"+produto.getDescricao()+"</td>");
 	out.print("<td>"+produto.getPreco()+"</td>");
-	out.print("<td><a href='ProjetoNatura/Produto?acao=consultarPorId="+produto.getCodigoProduto()+"'>Alterar</a></td>"); 
-	out.print("<td><a href='ProjetoNatura/Produto?acao=excluir&id="+produto.getCodigoProduto()+"'>Excluir</a></td>");
+	out.print("<td><a href='ProjetoNatura/Produto?acao=consultarProduto&codigoProduto="+produto.getCodigoProduto()+"'>Alterar</a></td>"); 
+	out.print("<td><a href='Produto?acao=excluir&codigoProduto="+produto.getCodigoProduto()+"'>Excluir</a></td>");
 	out.print("</tr>"); 
 	
 	

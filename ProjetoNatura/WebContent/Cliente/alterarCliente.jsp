@@ -17,19 +17,12 @@
 <div align="center">
 <div><img width="350px" height="250px" src="/../ProjetoNatura/imagens/clientes.jpg"/></div>
 		<br><br>
-		
-        
  					
-           	Nome <input  type="text"  size ="25" name="nome" value="<%=cliente.getNome()%>" ><br>
-		    
+           	Nome <input  type="text"  size ="25" name="nome" value="<%=cliente.getNome()%>" ><br>		    
 		    Telefone:<input  type="text"  size ="25" name="telefone" value="<%=cliente.getTelefone()%>"><br>
-
 			Endereço:<input  type="text"  size ="25" name="endereco" value="<%=cliente.getEndereco()%>" ><br>
-			
-			Cpf:<input  type="text"  size ="25" name="cpf" value="<%=cliente.getCpf()%>" ><br>
-			
+			Cpf:<input  type="text"  size ="25" name="cpf" value="<%=cliente.getCpf()%>" ><br>			
 			E-mail:<input  type="text"  size ="25" name="email" value="<%=cliente.getEmail()%>" ><br><br>
-					
 					<input type="submit" name="alterar" value="Alterar"/> 
 					
 <!-- 					<input type="button" onclick="location='../../ProjetoNatura/Cliente?acao=consultarTodos'" value=""> -->

@@ -10,6 +10,7 @@ import java.util.List;
 import javax.management.RuntimeErrorException;
 
 import br.com.projetoNatura.conexao.Conexao;
+import br.com.projetoNatura.entidade.Cliente;
 import br.com.projetoNatura.entidade.Produto;
 
 public class ProdutoDao {
@@ -78,16 +79,16 @@ public class ProdutoDao {
 	}
 
 	public void excluirProduto(Produto produto) {
-		String sql = "delete from produto where id=?";
+		String sql = "delete from produto WHERE codigoProduto=?";
 		try {
 			Connection con = Conexao.getConnection();
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setInt(1, produto.getCodigoProduto());
-			ps.execute();
-		} catch (Exception e) {
-			System.out.println("Produto Excluido com sucesso");
+			PreparedStatement stm = con.prepareStatement(sql);
+			stm.setInt(1, produto.getCodigoProduto());
+			stm.execute();
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
+
 	}
 
 	public List<Produto> produtos() {

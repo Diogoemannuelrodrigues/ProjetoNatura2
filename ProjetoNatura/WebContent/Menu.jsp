@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Menu</title>
+
 </head>
 <!-- <body BACKGROUND="C:\Users\Diogo\ProjetoNatura\WebContent\imagens\NATURALOGOVERDE.jpg" bgcolor="#D3D3D3"> -->
 <body>
@@ -45,5 +46,7 @@
 </fieldset>
 <BR></BR></table>
 <th><font color="Black" ><marquee>Compre nossos produtos!!!!!</marquee>
+
+ <input type="button" value="Close this window" onclick="self.close()">
 </body>
 </html>

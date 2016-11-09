@@ -10,19 +10,21 @@
 <body>
 <% Produto produto;%>
 <% produto = (Produto) request.getAttribute("Produto"); %>
-<form action="../../ProjetoNatura/Produto" method="post">
-
+<form action="../../ProjetoNatura/Produto?acao=AlterarProduto" method="post">
 <div align="CENTER">
 <h1>Cadastro.:</h1>
 	
 <fieldset style="width: 25%">
 <legend>Cadastro-Produtos:</legend></br>
 <input type="hidden" name="acao" value="<%=produto.getCodigoProduto() %>">
-		<input type="hidden" name="acao" value="alterarProduto" />
+		<input type="hidden" name="acao" value="AlterarProduto" />
 		Nome.:           <input type="text" name="nome" value="<%=produto.getNome() %>"> </br>
 		Descricao.:      <input type="text" name="descricao"value="<%=produto.getDescricao() %>">></br>
 		Preço.:          <input type="text" name="preco"value="<%=produto.getPreco()%>">></br>
 		             </br><input type="submit" value="Alterar">
+		             
+    <p><input type="button" onclick="location='../../ProjetoNatura/Menu.jsp'" value="Menu Principal"><br>
+		             
 </div>
 <div>
 <!-- <body background="home/diogoemannuel/Área de trabalho/ImagensNatura/maxresdefault.jpg"></body> -->

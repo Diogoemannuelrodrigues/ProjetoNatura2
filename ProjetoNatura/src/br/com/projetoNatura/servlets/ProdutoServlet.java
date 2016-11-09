@@ -18,8 +18,7 @@ public class ProdutoServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-			doPost(req, resp);
-	
+		doPost(req, resp);
 	}		
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -33,7 +32,7 @@ public class ProdutoServlet extends HttpServlet {
 				try {
 					produto.setNome(req.getParameter("nome"));
 					produto.setDescricao(req.getParameter("descricao"));
-					produto.setPreco(Double.parseDouble(req.getParameter("preco")));
+					produto.setPreco(Integer.parseInt(req.getParameter("preco")));
 					produtoBo.cadastrarProduto(produto);
 					System.out.println("Produto cadastrado:.");
 				} catch (ClassNotFoundException | SQLException e) {
@@ -52,28 +51,28 @@ public class ProdutoServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		
-		}else if(acao.equals("consultarProduto")){
-			
-			//produto = produtoBo.consultarProduto(Integer.parseInt(req.getParameter("codigoProduto")));
-			req.setAttribute("Produto", produto);
-			req.getRequestDispatcher("Produto/Alterar.jsp").forward(req, resp);
-			
-		}else if(acao.equals("alterarProduto")){
+		}else if(acao.equals("AlterarProduto")){
 			produto.setNome(req.getParameter("nome"));
 			produto.setDescricao(req.getParameter("descricao"));
 			produto.setCodigoProduto(Integer.parseInt(req.getParameter("codigoProduto")));
-			produto.setPreco(Double.parseDouble(req.getParameter("preco")));
+			produto.setPreco(Integer.parseInt(req.getParameter("preco")));
 			
 			produtoBo.alterarProduto(produto);
-			System.out.println("Produto cadastrado com sucesso.");
-			req.getRequestDispatcher("/resultado/produtoAlterado.jsp").forward(req, resp);
 			req.setAttribute("produto", produto);
+			req.getRequestDispatcher("../Produto?acao=consultarTodos").forward(req, resp);
+
+		}else if (acao.equals("excluir")) {
+			produto.setCodigoProduto(Integer.parseInt(req.getParameter("codigoProduto")));
+			produtoBo.excluir(produto);
+			resp.sendRedirect("/ProjetoNatura/Produto?acao=consultarTodos");
+			
 		
-		
-		}else if(acao.equals("excluir")){
+		}else if(acao.equals("consultarProduto")){			
+			produto = produtoBo.consultarProduto(Integer.parseInt(req.getParameter("codigoProduto")));
+			req.setAttribute("produto", produto);
+			req.getRequestDispatcher("AlterarProduto.jsp").forward(req, resp);
 			
-			
-			
+			doPost(req, resp);
 		}
 
 	}

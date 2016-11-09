@@ -3,9 +3,11 @@ package br.com.projetoNatura.bo;
 import java.sql.SQLException;
 import java.util.List;
 
+import br.com.projetoNatura.Dao.ClienteDao;
 import br.com.projetoNatura.Dao.ProdutoDao;
 import br.com.projetoNatura.Exception.DescricaoException;
 import br.com.projetoNatura.Exception.NomeException;
+import br.com.projetoNatura.entidade.Cliente;
 import br.com.projetoNatura.entidade.Produto;
 
 public class ProdutoBo {
@@ -30,8 +32,10 @@ public class ProdutoBo {
 		return dao.produtos();
 	}
 	
-	public void excluir(){
-		
+	public void excluir(Produto produto){
+		ProdutoDao dao = new ProdutoDao();
+		dao.excluirProduto(produto);
+	
 	}
 	
 	
