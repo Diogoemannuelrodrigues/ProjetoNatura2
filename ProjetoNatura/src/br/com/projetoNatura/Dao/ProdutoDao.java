@@ -37,26 +37,26 @@ public class ProdutoDao {
 
 	}
 
-	public Produto buscarProdutoPorId(int id) {
-		String sql = "select * from produto where id = ?";
+public Produto consultarProduto(int codigoProduto) {
+	Produto produto = new Produto();		
 		try {
 			Connection con = Conexao.getConnection();
-			PreparedStatement stm = con.prepareStatement(sql);
-			stm.setInt(1, id);
-			ResultSet set = stm.executeQuery();
-			while (set.next()) {
-				Produto produto = new Produto();
-				produto.setCodigoProduto(set.getInt("codigoProduto"));
-				produto.setNome(set.getString("nome"));
-				produto.setDescricao(set.getString("descricao"));
-				produto.setPreco(set.getDouble(("preco")));
+			PreparedStatement stm = con.prepareStatement("select * from produto where codigoProduto = ?");
+			stm.setInt(1, codigoProduto);
+			ResultSet rSet = stm.executeQuery();
+			while (rSet.next()) {
+				
+				produto.setCodigoProduto(rSet.getInt("codigoProduto"));
+				produto.setNome(rSet.getString("nome"));
+				produto.setDescricao(rSet.getString("descricao"));
+				produto.setPreco(rSet.getInt("preco"));
+				rSet.close();
+				stm.close();
 			}
-			set.close();
-			stm.close();
-		} catch (InstantiationException | IllegalAccessException |ClassNotFoundException | SQLException e) {
-			throw new RuntimeErrorException(null, "Nao foi encontrado produto com esse id");
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
 		}
-		return null;
+		return produto;
 	}
 
 	public static void alterarProduto(Produto produto) {

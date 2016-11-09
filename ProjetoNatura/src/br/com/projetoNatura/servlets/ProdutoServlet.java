@@ -34,7 +34,6 @@ public class ProdutoServlet extends HttpServlet {
 					produto.setDescricao(req.getParameter("descricao"));
 					produto.setPreco(Integer.parseInt(req.getParameter("preco")));
 					produtoBo.cadastrarProduto(produto);
-					System.out.println("Produto cadastrado:.");
 				} catch (ClassNotFoundException | SQLException e) {
 					System.out.println("Produto nao cadastrado:.");
 					e.printStackTrace();
@@ -47,20 +46,18 @@ public class ProdutoServlet extends HttpServlet {
 				req.setAttribute("produtos", produtos);
 				req.getRequestDispatcher("Produto/Listar.jsp").forward(req, resp);
 			} catch (ClassNotFoundException | SQLException e) {
-				System.out.println(":(");
 				e.printStackTrace();
 			}
 		
 		}else if(acao.equals("AlterarProduto")){
+			produto.setCodigoProduto(Integer.parseInt(req.getParameter("codigoProduto")));
 			produto.setNome(req.getParameter("nome"));
 			produto.setDescricao(req.getParameter("descricao"));
-			produto.setCodigoProduto(Integer.parseInt(req.getParameter("codigoProduto")));
-			produto.setPreco(Integer.parseInt(req.getParameter("preco")));
-			
-			produtoBo.alterarProduto(produto);
+			produto.setPreco(Integer.parseInt(req.getParameter("preco")));			
+			produtoBo.alterarProduto(produto);			
 			req.setAttribute("produto", produto);
-			req.getRequestDispatcher("../Produto?acao=consultarTodos").forward(req, resp);
-
+			resp.sendRedirect("../ProjetoNatura/Produto?acao=consultarTodos");
+			
 		}else if (acao.equals("excluir")) {
 			produto.setCodigoProduto(Integer.parseInt(req.getParameter("codigoProduto")));
 			produtoBo.excluir(produto);
@@ -70,10 +67,10 @@ public class ProdutoServlet extends HttpServlet {
 		}else if(acao.equals("consultarProduto")){			
 			produto = produtoBo.consultarProduto(Integer.parseInt(req.getParameter("codigoProduto")));
 			req.setAttribute("produto", produto);
-			req.getRequestDispatcher("AlterarProduto.jsp").forward(req, resp);
+			req.getRequestDispatcher("/Produto/AlterarProduto.jsp").forward(req, resp);
 			
-			doPost(req, resp);
 		}
+
 
 	}
 }

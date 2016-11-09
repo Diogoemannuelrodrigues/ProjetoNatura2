@@ -32,7 +32,7 @@
 	out.print("<td>"+produto.getNome()+"</td>"); 
 	out.print("<td>"+produto.getDescricao()+"</td>");
 	out.print("<td>"+produto.getPreco()+"</td>");
-	out.print("<td><a href='ProjetoNatura/Produto?acao=consultarProduto&codigoProduto="+produto.getCodigoProduto()+"'>Alterar</a></td>"); 
+	out.print("<td><a href='Produto?acao=consultarProduto&codigoProduto="+produto.getCodigoProduto()+"'>Alterar</a></td>"); 
 	out.print("<td><a href='Produto?acao=excluir&codigoProduto="+produto.getCodigoProduto()+"'>Excluir</a></td>");
 	out.print("</tr>"); 
 	
@@ -40,8 +40,12 @@
 	}
 	%>
 	</table>
-	</div>
+	
+	<p><input type="button" onclick="location='../ProjetoNatura/Produto/Cadastro.jsp'" value="Voltar"><br>
+	
+	
 	<p><input type="button" onclick="location='../../ProjetoNatura/Menu.jsp'" value="Menu Principal"><br>
+	</div>
 	<br>
 </form>
 </body>

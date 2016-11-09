@@ -19,7 +19,7 @@ public class ProdutoBo {
 	}
 
 	public Produto consultarProduto(int codigoProduto) {
-		return dao.buscarProdutoPorId(codigoProduto);
+		return dao.consultarProduto(codigoProduto);
 
 	}
 	

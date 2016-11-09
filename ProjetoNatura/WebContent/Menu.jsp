@@ -47,6 +47,5 @@
 <BR></BR></table>
 <th><font color="Black" ><marquee>Compre nossos produtos!!!!!</marquee>
 
- <input type="button" value="Close this window" onclick="self.close()">
 </body>
 </html>

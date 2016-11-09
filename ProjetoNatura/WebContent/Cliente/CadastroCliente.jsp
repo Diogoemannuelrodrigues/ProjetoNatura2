@@ -10,9 +10,10 @@
 <form action="../../ProjetoNatura/cliente" method="post">
 <div align="CENTER">
 <h1>Cadastro.:</h1>
+<img width="350px" height="250px" src="/../ProjetoNatura/imagens/clientes.jpg"/><br>
 
-<!-- Teste -->
 <fieldset style="width: 35%">
+
 <legend>Cadastro-Clientes:</legend></br>
 		Nome-Cliente.:           <input type="text" name="nome"></br>
 		Telefone.:      <input type="text" name="telefone"></br>

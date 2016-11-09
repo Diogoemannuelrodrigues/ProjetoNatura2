@@ -41,7 +41,7 @@ public class VendaDAO {
 				ResultSet sul = stm.executeQuery();
 				while(sul.next()){
 					venda.setCliente(dao.consultarPorId(sul.getInt("id")));
-					venda.setProduto(daoP.buscarProdutoPorId(sul.getInt("codigoProduto")));
+					venda.setProduto(daoP.consultarProduto(sul.getInt("codigoProduto")));
 					venda.setDescricao(sul.getString("descricao"));
 					vendas.add(venda);
 				}

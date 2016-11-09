@@ -74,8 +74,7 @@ public class ClienteServlet extends HttpServlet {
 			clienteBo.alterarCliente(cliente);
 			resp.sendRedirect("../ProjetoNatura/cliente?acao=consultarTodos");
 
-		} else {
-			System.out.println("in here");
+		
 		}
 	}
 }

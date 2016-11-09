@@ -5,23 +5,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Alterar</title>
+<title>Alterar Produto</title>
 </head>
 <body>
-<% Produto produto;%>
-<% produto = (Produto) request.getAttribute("Produto"); %>
+<%Produto produto;%>
+<%produto = (Produto) request.getAttribute("produto"); %>
 <form action="../../ProjetoNatura/Produto?acao=AlterarProduto" method="post">
 <div align="CENTER">
-<h1>Cadastro.:</h1>
+<h1>Alterar:</h1>
 	
 <fieldset style="width: 25%">
-<legend>Cadastro-Produtos:</legend></br>
-<input type="hidden" name="acao" value="<%=produto.getCodigoProduto() %>">
+<legend>Cadastro-Produtos</legend></br>
+
+<input type="hidden" name="acao" value="AlterarProduto"/>
+
+<input type="hidden" size="25" name="id" value="<%=produto.getCodigoProduto() %>">
 		<input type="hidden" name="acao" value="AlterarProduto" />
-		Nome.:           <input type="text" name="nome" value="<%=produto.getNome() %>"> </br>
-		Descricao.:      <input type="text" name="descricao"value="<%=produto.getDescricao() %>">></br>
-		Preço.:          <input type="text" name="preco"value="<%=produto.getPreco()%>">></br>
+		Nome:           <input type="text" name="nome" value="<%=produto.getNome() %>"> </br>
+		Descricao:      <input type="text" name="descricao"value="<%=produto.getDescricao() %>"></br>
+		Preço:          <input type="text" name="preco"value="<%=produto.getPreco()%>"></br>
 		             </br><input type="submit" value="Alterar">
+		             
 		             
     <p><input type="button" onclick="location='../../ProjetoNatura/Menu.jsp'" value="Menu Principal"><br>
 		             
