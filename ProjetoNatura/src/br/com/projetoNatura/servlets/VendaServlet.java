@@ -35,6 +35,8 @@ public class VendaServlet extends HttpServlet{
 			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
 			}
+		}else if(acao.equals("realizarVenda")){
+			
 		}
 	
 	}

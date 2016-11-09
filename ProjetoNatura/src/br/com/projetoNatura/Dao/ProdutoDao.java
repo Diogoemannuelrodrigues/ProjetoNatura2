@@ -62,12 +62,11 @@ public Produto consultarProduto(int codigoProduto) {
 	public static void alterarProduto(Produto produto) {
 		try {
 			Connection con = Conexao.getConnection();
-			PreparedStatement stm = con
-					.prepareStatement("UPDATE produto set nome = ?, descricao = ?,"
+			PreparedStatement stm = con.prepareStatement("UPDATE produto set nome = ?, descricao = ?,"
 							+ " preco = ? where codigoProduto = ?");
 			stm.setString(1, produto.getNome());
 			stm.setString(2, produto.getDescricao());
-			stm.setDouble(4, produto.getPreco());
+			stm.setDouble(3, produto.getPreco());
 			stm.setInt(4, produto.getCodigoProduto());
 
 			stm.executeUpdate();

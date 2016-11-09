@@ -50,7 +50,7 @@ public class ProdutoServlet extends HttpServlet {
 			}
 		
 		}else if(acao.equals("AlterarProduto")){
-			produto.setCodigoProduto(Integer.parseInt(req.getParameter("codigoProduto")));
+			produto.setCodigoProduto(Integer.parseInt(req.getParameter("id")));
 			produto.setNome(req.getParameter("nome"));
 			produto.setDescricao(req.getParameter("descricao"));
 			produto.setPreco(Integer.parseInt(req.getParameter("preco")));			
@@ -65,7 +65,7 @@ public class ProdutoServlet extends HttpServlet {
 			
 		
 		}else if(acao.equals("consultarProduto")){			
-			produto = produtoBo.consultarProduto(Integer.parseInt(req.getParameter("codigoProduto")));
+			produto = produtoBo.consultarProduto(Integer.parseInt(req.getParameter("id")));
 			req.setAttribute("produto", produto);
 			req.getRequestDispatcher("/Produto/AlterarProduto.jsp").forward(req, resp);
 			
