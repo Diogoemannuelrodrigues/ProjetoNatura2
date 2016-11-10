@@ -49,7 +49,7 @@
 			<td align="center"><%= venda.getProduto().getPreco() %></td> 
 			<td align="center"><%= venda.getDescricao() %></td> 
 			<td><a href="/ProjetoNatura/Venda?acao=excluir&id=<%= venda.getIdVenda()%>">Excluir</a></td>
-			
+			<>
 			</tr>
 		<% 		
 		}
