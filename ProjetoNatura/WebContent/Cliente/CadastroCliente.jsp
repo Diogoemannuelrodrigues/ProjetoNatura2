@@ -22,7 +22,7 @@
 		E-mail.:          <input type="text" name="email"></br>
 		
 	<input  type="hidden" name="acao" value="cadastrar">
-		             </br><input type="submit" value="cadastrar"><br>
+		             </br><input type="submit" value="Cadastrar"><br>
 
 <p><input type="button" onclick="location='../../ProjetoNatura/cliente?acao=consultarTodos'" value="Listar"><br>
 

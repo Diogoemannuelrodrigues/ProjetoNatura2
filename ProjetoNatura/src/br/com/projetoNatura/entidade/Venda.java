@@ -3,7 +3,7 @@ package br.com.projetoNatura.entidade;
 public class Venda {
 	
 	private Produto produto = new Produto();
-	private Cliente cliente = new Cliente();;
+	private Cliente cliente = new Cliente();
 	private String descricao;
 	private int idVenda;
 

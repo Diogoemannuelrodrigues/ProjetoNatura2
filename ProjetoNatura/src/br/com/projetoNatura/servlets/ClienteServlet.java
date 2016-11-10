@@ -53,7 +53,7 @@ public class ClienteServlet extends HttpServlet {
 			cliente.setEmail(req.getParameter("email"));
 			clienteBo.cadastar(cliente);
 			req.getRequestDispatcher("resultado/ClienteCadastrado.jsp").forward(req, resp);
-
+			
 		} else if (acao.equals("consultarTodos")) {
 			try {
 				List<Cliente> clientes = clienteBo.consultarTodos();

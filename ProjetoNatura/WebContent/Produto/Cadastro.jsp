@@ -18,7 +18,7 @@
 		Nome.:           <input type="text" name="nome"></br>
 		Descricao.:      <input type="text" name="descricao"></br>
 		Preço.:          <input type="text" name="preco"></br>
-		             </br><input type="submit" value="cadastrar"><br>
+		             </br><input type="submit" value="Cadastrar"><br>
 		             
 		             </br><input type="button" onclick="location='../../ProjetoNatura/Produto?acao=consultarTodos'" value="Listar"><br>
 		             

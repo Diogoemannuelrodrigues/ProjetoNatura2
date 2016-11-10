@@ -28,7 +28,15 @@
 		<url-pattern>/Produto</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>Venda</servlet-name>
+		<servlet-class>br.com.projetoNatura.servlets.VendaServlet</servlet-class>
+	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>Venda</servlet-name>
+		<url-pattern>/Venda</url-pattern>
+	</servlet-mapping>
 
 
 
