@@ -10,9 +10,9 @@
 <form action="../../ProjetoNatura/Produto" method="post">
 
 <div align="CENTER">
-<h1>Cadastro.:</h1>
-<div><img width="350px" height="250px" src="/../ProjetoNatura/imagens/Pedidos-Natura-221010.jpg"/></div>
-<br><br><fieldset style="width: 25%">
+<div><img width="399px" height="250px" src="/../ProjetoNatura/imagens/natuP.jpg"/></div>
+<h1>Cadastro</h1>
+<br><fieldset style="width: 25%">
 <legend>Cadastro-Produtos:</legend></br>
 		<input type="hidden" name="acao" value="cadastrar" />
 		Nome.:           <input type="text" name="nome"></br>
