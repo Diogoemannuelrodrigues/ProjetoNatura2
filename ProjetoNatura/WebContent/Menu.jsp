@@ -11,9 +11,10 @@
 <body>
 <div align="center">
 <table bgcolor="yellow" width="100%">
-   <th><font color="Black" ><marquee>Natura: Bem Estar Bem!!!!!</marquee>
+   <th><font color="Orange" ><marquee>Natura: Bem Estar Bem!!!!!</marquee>
  <div align="center"></div> </font></th>
    </table>
+   <br><br>
 <fieldset style="width: 35%">
 
 <form action="">
@@ -46,7 +47,9 @@
 </div>
 </fieldset>
 <BR></BR></table>
-<th><font color="Black" ><marquee>Compre nossos produtos!!!!!</marquee>
-
+<br><br>
+   <a href="http://www.natura.com.br/"><i>Clique aqui para visitar nossos parceiros</i> </a>
+</form>
 </body>
 </html>
+

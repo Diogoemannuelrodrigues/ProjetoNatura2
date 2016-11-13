@@ -9,7 +9,7 @@
 <body>
 <form>
 
-<h1>Cadastrado Com sucesso</h1>
+<h1>Produto cadastrado com sucesso</h1>
 <p><input type="button" onclick="location='../../ProjetoNatura/Produto/Cadastro.jsp'" value="Voltar"><br>
 <p><input type="button" onclick="location='../../ProjetoNatura/Menu.jsp'" value="Menu Principal"><br>
 </form>

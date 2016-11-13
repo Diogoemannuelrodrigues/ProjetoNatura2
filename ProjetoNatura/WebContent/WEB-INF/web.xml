@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="3.0">
 	<display-name>ProjetoNatura</display-name>
 	<welcome-file-list>
-		<welcome-file>Login.jsp</welcome-file>
+		<welcome-file>Menu.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<servlet>

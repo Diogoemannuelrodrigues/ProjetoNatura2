@@ -14,12 +14,13 @@
 <body>
 
 <div align="center">
-<h1>Realização de Vendas</h1>
+<img width="350px" height=250px" src="/../ProjetoNatura/imagens/compra-online-natura.jpg"/><br><br>
+<h1>Venda</h1>
 	<form action="/ProjetoNatura/Venda" method="post">
 
 	Cliente: <select name="id" required="required">
 			
-				<option value="">Selecione</option>
+				<option value="">Procurar</option>
 				<%
 				List<Cliente> lista = (List<Cliente>) request.getAttribute("lista");
 				
@@ -49,7 +50,7 @@
 		
 		<input type="hidden" name="acao" value="realizaVenda">
 		<BR><BR><BR>
-		<input type="submit" name="enviar" value="Enviar" class="myButton2">
+		<input type="submit" name="enviar" value="Vender" class="myButton2">
 		<input type="reset" value="Limpar" class="myButton2">
 	
 	</form>
