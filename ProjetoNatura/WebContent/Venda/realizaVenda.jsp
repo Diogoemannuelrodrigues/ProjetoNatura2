@@ -14,7 +14,7 @@
 <body>
 
 <div align="center">
-<img width="350px" height=250px" src="/../ProjetoNatura/imagens/compra-online-natura.jpg"/><br><br>
+<img width="350px" height=250px" src="/../ProjetoNatura/imagens/compra-online-natura.jpg"/><br>
 <h1>Venda</h1>
 	<form action="/ProjetoNatura/Venda" method="post">
 

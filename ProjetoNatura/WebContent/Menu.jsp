@@ -48,7 +48,7 @@
 </fieldset>
 <BR></BR></table>
 <br><br>
-   <a href="http://www.natura.com.br/"><i>Clique aqui para visitar nossos parceiros</i> </a>
+   <a href="http://www.natura.com.br/"><i>Clique aqui para visitar nosso parceiro</i> </a>
 </form>
 </body>
 </html>
