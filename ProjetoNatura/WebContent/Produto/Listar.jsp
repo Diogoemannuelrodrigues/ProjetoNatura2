@@ -19,11 +19,11 @@
 <table border="1">
 		<tr>
 		<div align="center">
-			<a><td>Nome-Produto</td></a>
-			<td>Descricao</td>
-			<td>Preco</td>
-			<td></td>
-			<td></td>
+			<a><td><font color="Orange"><div align="middle">Nome-Produto</td></a>
+			<a><td><font color="Orange"><div align="middle">Descricao</td>
+			<a><td><font color="Orange"><div align="middle">Preco</td>
+			<td><font color="Orange"><div align="middle">Action</td>
+			<td><font color="Orange"><div align="middle">Action</td>
 		</tr>
 	
 	<% for (Produto produto : produtos){%>

@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.mysql.fabric.Response;
 
@@ -26,7 +27,7 @@ public class ClienteServlet extends HttpServlet {
 		doPost(req, resp);
 
 		String acao = req.getParameter("acao");
-
+		
 		if (acao.equals("excluir")) {
 			cliente.setId(Integer.parseInt(req.getParameter("id")));
 			clienteBo.excluirCliente(cliente);

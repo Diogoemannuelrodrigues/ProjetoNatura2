@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.projetoNatura.bo.ClienteBo;
 import br.com.projetoNatura.bo.ProdutoBo;
@@ -95,9 +96,14 @@ public class VendaServlet extends HttpServlet {
 
 	}
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		doPost(request, response);
+	public void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+		
+//		Cliente cliente = new Cliente();
+//		HttpSession sessao = req.getSession();
+//		sessao.setMaxInactiveInterval(3000);
+//		sessao.setAttribute("nome", cliente.getNome());
+		
+		doPost(req, response);
 
 	}
 

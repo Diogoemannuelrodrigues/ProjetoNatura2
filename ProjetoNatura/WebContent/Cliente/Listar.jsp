@@ -18,13 +18,13 @@
 <table border="1">
 		<tr>
 		<div align="center">
-			<td>Id:</td>
-			<a><td>Nome cliente:</td></a>
-			<a><td>Telefone:</td></a>
-			<td>Endereco:</td>
-			<td>Cpf:</td>
-			<td>E-mail:</td>
-			<td>Action</td>
+			<a><td><font color="Orange"><div align="middle">Id</td>
+			<a><td><font color="Orange"><div align="middle">Nome cliente</td></a>
+			<a><td><font color="Orange"><div align="middle">Telefone</td></a>
+			<td><font color="Orange"><div align="middle">Endereco</td>
+			<td><font color="Orange"><div align="middle">Cpf</td>
+			<td><font color="Orange"><div align="middle">E-mail</td>
+			<td><font color="Orange"><div align="middle">Action</td>
 		</tr>
 		
 		<%for (Cliente cliente: clientes) {%>
@@ -35,8 +35,8 @@
 			<td><%=cliente.getEndereco()%></td>
 			<td><%=cliente.getCpf()%></td>
 			<td><%=cliente.getEmail()%></td>
-			<td><a href="/ProjetoNatura/cliente?acao=consultarPorId&id=<%= cliente.getId()%>">Alterar</a>
-			<a href="/ProjetoNatura/cliente?acao=excluir&id=<%= cliente.getId()%>">Excluir</a></td>
+			<td><a href="/ProjetoNatura/cliente?acao=consultarPorId&id=<%= cliente.getId()%>"><font color="BLUE">Alterar</a>
+			<a href="/ProjetoNatura/cliente?acao=excluir&id=<%= cliente.getId()%>"><font color="RED">Excluir</a></td>
 			</tr>
 		<% 		
 		}

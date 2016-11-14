@@ -13,7 +13,7 @@
 <title>Relatório de Vendas</title>
 </head>
 <body>
-
+<div align="center">
 	<div id='imprimir' align="center">
 		<br>
 		<br> <img width="450px" height="250px"
@@ -25,15 +25,15 @@
 		<table border="1">
 			<tr>
 				<div align="center">
-					<td>Id Venda:</td> <a><td>Nome cliente:</td></a> <a><td>CPF
-							Cliente:</td></a> <a>
-						<td>Telefone Cliente:</td>
+					<td>Id Venda</td> <a><td>Nome cliente</td></a> <a><td>CPF
+							Cliente</td></a> <a>
+						<td>Telefone</td>
 					</a> <a>
-						<td>Produto Comprado:</td>
+						<td>Produto Comprado</td>
 					</a>
-					<td>Valor do Produto:</td>
-					<td>Descrição:</td>
-					<td>Actions:</td>
+					<td>Valor do Produto</td>
+					<td>Descrição</td>
+					<td><font color="RED">Actions</td>
 			</tr>
 
 			<%
@@ -50,7 +50,7 @@
 				<td align="center"><%=venda.getProduto().getPreco()%></td>
 				<td align="center"><%=venda.getDescricao()%></td>
 				<td><a
-					href="/ProjetoNatura/Venda?acao=excluir&id=<%=venda.getIdVenda()%>">Excluir</a></td>
+					href="/ProjetoNatura/Venda?acao=excluir&id=<%=venda.getIdVenda()%>"><font color="RED">Excluir</a></td>
 				<>
 			</tr>
 			<%
@@ -65,7 +65,7 @@
 				value="Menu Principal"><br>
 	</div align="center">
 
-
+</div>
 </body>
 </html>
 

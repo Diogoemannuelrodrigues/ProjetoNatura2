@@ -27,13 +27,7 @@
 <td colspan="4" align="center">MENU</td>
 </tr>
 <tr>			
-		<%
-		
-// 		if(session.getAttribute("login") == null)
-// 			request.getRequestDispatcher("/Login.jsp").forward(request, response);
-// 			response.sendRedirect("Login.jsp");
-		
-		%> 
+		 
 <font color ="#ff0000">
 <td><a href="Produto/Cadastro.jsp"><input type="button" name="Produto" value="Produto"/></a></td>
 <td><a href="Cliente/CadastroCliente.jsp"><input type="button" name="Cliente" value="Cliente"/></a></td>
