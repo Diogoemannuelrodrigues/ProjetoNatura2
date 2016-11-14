@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="3.0">
 	<display-name>ProjetoNatura</display-name>
 	<welcome-file-list>
-		<welcome-file>Menu.jsp</welcome-file>
+		<welcome-file>Login.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<servlet>
@@ -38,7 +38,15 @@
 		<url-pattern>/Venda</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>Usuario</servlet-name>
+		<servlet-class>br.com.projetoNatura.servlets.UsuarioServlet</servlet-class>
+	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>Usuario</servlet-name>
+		<url-pattern>/usuario</url-pattern>
+	</servlet-mapping>
 
 
 

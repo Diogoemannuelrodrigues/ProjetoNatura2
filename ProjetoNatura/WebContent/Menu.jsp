@@ -24,7 +24,7 @@
 <font color="ORANGE">
 <table border="2">
 <tr align="RIGHT">
-<td colspan="4" align="center">MENU</td>
+<td colspan="5" align="center">MENU</td>
 </tr>
 <tr>			
 		 
@@ -33,6 +33,7 @@
 <td><a href="Cliente/CadastroCliente.jsp"><input type="button" name="Cliente" value="Cliente"/></a></td>
 <td><a href="/ProjetoNatura/Venda?acao=vender"><input type="button" name="Venda" value="Realizar Venda"/></a></td>
 <td><a href="/ProjetoNatura/Venda?acao=listar"><input type="button" name="Venda" value="Relatório de Vendas"/></a></td>
+<td><a href="usuario"><input type="button" name="Sair" value="Sair"/></a></td>
 </font>
 </td>
 </tr>
