@@ -14,8 +14,13 @@ public class ProdutoBo {
 	
 	ProdutoDao dao = new ProdutoDao();
 	
-	public void cadastrarProduto(Produto produto) throws ClassNotFoundException, SQLException {
-		dao.cadastrarProduto(produto);
+	public boolean cadastrarProduto(Produto produto) throws ClassNotFoundException, SQLException {
+		if(!(produto.getNome() == "")){
+			dao.cadastrarProduto(produto);
+		}else{
+			return false;
+		}
+		return true;
 	}
 
 	public Produto consultarProduto(int codigoProduto) {

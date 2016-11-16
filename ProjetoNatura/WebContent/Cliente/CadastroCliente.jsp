@@ -9,7 +9,7 @@
 <body>
 <form action="../../ProjetoNatura/cliente" method="post">
 <div align="CENTER">
-<h1>Cadastro.:</h1>
+<h1>Cadastro</h1>
 <img width="350px" height="250px" src="/../ProjetoNatura/imagens/clientes.jpg"/><br>
 
 <fieldset style="width: 35%">

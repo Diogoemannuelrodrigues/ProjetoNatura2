@@ -52,10 +52,17 @@ public class ClienteServlet extends HttpServlet {
 			cliente.setEndereco(req.getParameter("endereco"));
 			cliente.setCpf(req.getParameter("cpf"));
 			cliente.setEmail(req.getParameter("email"));
-			clienteBo.cadastar(cliente);
+			if(clienteBo.cadastar(cliente)){
 			req.getRequestDispatcher("resultado/ClienteCadastrado.jsp").forward(req, resp);
-			
-		} else if (acao.equals("consultarTodos")) {
+		}else{
+			resp.sendRedirect("/ProjetoNatura/resultado/Error.jsp");
+		}
+	}
+	
+ 
+		
+		
+		if (acao.equals("consultarTodos")) {
 			try {
 				List<Cliente> clientes = clienteBo.consultarTodos();
 				req.setAttribute("clientes", clientes);

@@ -15,7 +15,6 @@ public class ClienteDao {
 	Connection conexao = null;
 
 	public void cadastrarCliente(Cliente cliente) {
-
 		try {
 			conexao = Conexao.getConnection();
 			PreparedStatement stm = conexao
@@ -29,14 +28,11 @@ public class ClienteDao {
 			stm.close();
 			conexao.close();
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-
 			e.printStackTrace();
 		}
-
 	}
 
 	public Cliente consultarPorId(int id) {
-		
 		Cliente cliente = new Cliente();
 		try {
 			Connection con = Conexao.getConnection();
@@ -44,7 +40,6 @@ public class ClienteDao {
 			stm.setInt(1, id);
 			ResultSet rSet = stm.executeQuery();
 			while (rSet.next()) {
-				
 				cliente.setId(rSet.getInt("id"));
 				cliente.setNome(rSet.getString("nome"));
 				cliente.setTelefone(rSet.getString("telefone"));
@@ -61,7 +56,6 @@ public class ClienteDao {
 	}
 
 	public static void alterarCliente(Cliente cliente) {
-
 		try {
 			Connection con = Conexao.getConnection();
 			PreparedStatement stm = con.prepareStatement(
@@ -75,7 +69,6 @@ public class ClienteDao {
 			stm.executeUpdate();
 			stm.close();
 			con.close();
-
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -104,7 +97,6 @@ public class ClienteDao {
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-
 		return listaCliente;
 	}
 

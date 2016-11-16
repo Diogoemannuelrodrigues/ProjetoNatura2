@@ -7,12 +7,16 @@ import br.com.projetoNatura.Dao.ClienteDao;
 import br.com.projetoNatura.entidade.Cliente;
 
 public class ClienteBo {
-
+Cliente cliente = new Cliente();
 	public boolean cadastar(Cliente cliente) {
 		ClienteDao dao = new ClienteDao();
-		dao.cadastrarCliente(cliente);
+		if(!(cliente.getNome() == "") && cliente.getCpf() == "" && cliente.getEmail() == ""
+				&& cliente.getTelefone() == ""){
+			dao.cadastrarCliente(cliente);
+		}else{
+			return false;
+		}
 		return true;
-
 	}
 
 	public static List<Cliente> consultarTodos() throws ClassNotFoundException, SQLException {
