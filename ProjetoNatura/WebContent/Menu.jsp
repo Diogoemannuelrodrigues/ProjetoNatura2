@@ -21,6 +21,7 @@
 
 <img src="imagens/natura-logo.jpg"height="200"width="200" WIDTH=20% /><br><br>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PYbmSTxzVcU?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
 <font color="ORANGE">
 <table border="2">
 <tr align="RIGHT">
@@ -39,11 +40,17 @@
 </tr>
 </form>
 
+
+
 </div>
 </fieldset>
 <BR></BR></table>
 <br><br>
    <a href="http://www.natura.com.br/"><i>Clique aqui para visitar nosso parceiro</i> </a>
+   
+   
+
+</video>
 </form>
 </body>
 </html>

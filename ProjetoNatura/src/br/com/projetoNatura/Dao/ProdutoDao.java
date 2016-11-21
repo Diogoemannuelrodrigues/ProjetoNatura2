@@ -19,7 +19,6 @@ public class ProdutoDao {
 
 	public void cadastrarProduto(Produto produto) {
 		String sql = "insert into Produto (nome,descricao, preco) values (?,?,?)";
-		try {
 			try {
 				con = Conexao.getConnection();
 				PreparedStatement stm = con.prepareStatement(sql);
@@ -28,14 +27,11 @@ public class ProdutoDao {
 				stm.setDouble(3, produto.getPreco());
 				stm.execute();
 				con.close();
-			} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-				// TODO Auto-generated catch block
+			} catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 				e.printStackTrace();
 			}
-		} catch (SQLException e) {
 		}
 
-	}
 
 public Produto consultarProduto(int codigoProduto) {
 	Produto produto = new Produto();		
