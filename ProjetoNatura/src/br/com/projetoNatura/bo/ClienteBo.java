@@ -7,13 +7,13 @@ import br.com.projetoNatura.Dao.ClienteDao;
 import br.com.projetoNatura.entidade.Cliente;
 
 public class ClienteBo {
-Cliente cliente = new Cliente();
+	Cliente cliente = new Cliente();
+
 	public boolean cadastar(Cliente cliente) {
 		ClienteDao dao = new ClienteDao();
-		if(!(cliente.getNome() == "") && cliente.getCpf() == "" && cliente.getEmail() == ""
-				&& cliente.getTelefone() == ""){
+		if (!(cliente.getNome() == "" && cliente.getEmail() == "" && cliente.getTelefone() == "")) {
 			dao.cadastrarCliente(cliente);
-		}else{
+		} else {
 			return false;
 		}
 		return true;
@@ -29,15 +29,15 @@ Cliente cliente = new Cliente();
 		dao.alterarCliente(cliente);
 	}
 
-	public Cliente consultarPorId(int id){
-		ClienteDao dao = new ClienteDao();	
-		return dao.consultarPorId(id); 
+	public Cliente consultarPorId(int id) {
+		ClienteDao dao = new ClienteDao();
+		return dao.consultarPorId(id);
 	}
-	
-	public void excluirCliente(Cliente cliente){
+
+	public void excluirCliente(Cliente cliente) {
 		ClienteDao dao = new ClienteDao();
 		dao.excluirCliente(cliente);
-	
+
 	}
 
 }

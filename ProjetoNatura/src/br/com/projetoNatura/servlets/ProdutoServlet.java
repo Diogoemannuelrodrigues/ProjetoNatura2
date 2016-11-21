@@ -35,7 +35,6 @@ public class ProdutoServlet extends HttpServlet {
 					produto.setPreco(Integer.parseInt(req.getParameter("preco")));
 					produtoBo.cadastrarProduto(produto);
 				} catch (ClassNotFoundException | SQLException e) {
-					System.out.println("Produto nao cadastrado:.");
 					e.printStackTrace();
 				}					
 				req.getRequestDispatcher("resultado/produtoCadastrado.jsp").forward(req, resp);
